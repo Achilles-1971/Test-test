@@ -19,9 +19,10 @@ from django.urls import path
 from django.urls import path, include 
 from authentication import views
 from django.urls import path, include
-from authentication.views import AuthenticationAPIView 
-from registration.views import UserRegistrationAPIView
+from authentication.views import AuthenticationAPIView
+from registration. views import UserRegistrationAPIView, UsersImportExcel
 
 urlpatterns = [
 path("api/auth", AuthenticationAPIView.as_view(), name="auth"), 
-path("api/reg", UserRegistrationAPIView.as_view(), name="reg") ]
+path("api/reg", UserRegistrationAPIView.as_view(), name="reg"),
+path("api/reg/excel", UsersImportExcel.as_view(), name="users_exel") ]

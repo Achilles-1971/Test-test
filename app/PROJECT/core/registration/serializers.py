@@ -20,3 +20,5 @@ class UserRegistrationSerializer(serializers.Serializer):
         events_sql = select(Event)
         events = session.scalars(events_sql)
         self.fields["event"].choices = events
+class UserImportExcelSerializer(serializers.Serializer):
+    file = serializers.FileField(help_text="Необходимый формат: .xls, .xlsx")
