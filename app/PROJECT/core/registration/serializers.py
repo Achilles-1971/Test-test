@@ -17,7 +17,7 @@ class UserRegistrationSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=50, required=True)
     def __init__ (self, *args, **kwargs):
         super(UserRegistrationSerializer, self).__init__ (*args, **kwargs)
-        events_sql = select(Event)
+        events_sql = select(Event) 
         events = session.scalars(events_sql)
         self.fields["event"].choices = events
 class UserImportExcelSerializer(serializers.Serializer):
