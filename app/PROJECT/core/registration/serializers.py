@@ -13,7 +13,7 @@ class UserRegistrationSerializer(serializers.Serializer):
     direction = serializers.CharField(max_length=255, required=True)
     event = serializers.ChoiceField(choices=[], required=True) 
     photo = serializers. ImageField(required=False) 
-    sername = serializers.CharField(max_length=50, required=True)
+    username = serializers.CharField(max_length=50, required=True)
     password = serializers.CharField(max_length=50, required=True)
     def __init__ (self, *args, **kwargs):
         super(UserRegistrationSerializer, self).__init__ (*args, **kwargs)
